@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <fx>
+
+	<engine>
+		<name>internal fan</name>
+		<mode>looped</mode>
+		<path>Aircraft/mig31-foxhound/Sounds/whine.wav</path>
+		<condition>
+			<property>engines/engine[0]/running</property>
+			<property>sim/current-view/internal</property>
+		</condition>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<ofset>-0.01</ofset>
+			<factor>0.01</factor>
+			<max>0.85</max>
+		</pitch>
+		<volume>
+			<property>/controls/throttle[0]</property>
+			<factor>0.25</factor>
+			<min>0.15</min>
+			<max>0.90</max>
+		</volume>
+	</engine>
+
+	<engine>
+		<name>internal afterburner</name>
+		<mode>looped</mode>
+		<path>Aircraft/mig31-foxhound/Sounds/exhaust_loop.wav</path>
+		<condition>
+			<property>engines/engine[0]/running</property>
+			<property>sim/current-view/internal</property>
+			<property>engines/engine[0]/augmentation</property>		</condition>
+		<!--pitch>
+			<property>engines/engine[0]/n1</property>
+			<ofset>-0.01</ofset>
+			<factor>0.01</factor>
+			<max>0.85</max>
+		</pitch-->
+		<volume>
+			<property>/controls/throttle[0]</property>
+			<factor>0.0075</factor>
+			<min>0.05</min>
+			<max>0.450</max>
+		</volume>
+	</engine>
+
+
+	<engine_fan>
+		<name>external fan</name>
+		<mode>looped</mode>
+		<path>Aircraft/mig31-foxhound/Sounds/turbojet_fan.wav</path>
+		<condition>
+			<property>engines/engine[0]/running</property>
+			<!--
+			<not><property>engines/engine[0]/augmentation</property></not>
+			-->
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<ofset>-50.0</ofset>
+			<factor>0.01</factor>
+		</pitch>
+		<volume>
+			<property>controls/engines/engine[0]/throttle</property>
+			<factor>0.5</factor>
+			<min>0.08</min>
+			<max>1.05</max>
+		</volume>
+	</engine_fan>
+
+	<engine_fan>
+		<name>afterburner</name>
+		<path>Aircraft/mig31-foxhound/Sounds/exhaust_loop.wav</path>
+		<mode>looped</mode>
+		<condition>
+			<property>engines/engine[0]/running</property>
+			<property>engines/engine[0]/augmentation</property>
+			<not>
+				<property>sim/current-view/internal</property>
+			</not>
+		</condition>
+		<!--pitch>
+			<property>engines/engine[0]/n1</property>
+			<ofset>0.8</ofset>
+			<factor>.003</factor>
+		</pitch-->
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<ofset>0.8</ofset>
+			<factor>0.5</factor>
+		</volume>
+	</engine_fan>
+
+  <flap>
+	  <name>flaps</name>
+	  <mode>in-transit</mode>
+	  <path>Aircraft/mig31-foxhound/Sounds/flaps.wav</path>
+	  <property>/surface-positions/flap-pos-norm</property>
+	  <volume>
+		  <factor>0.6</factor>
+	  </volume>
+	  <reference-dist>10.0</reference-dist>
+  </flap>
+
+	<gear>
+		<name>gear</name>
+		<path>Aircraft/mig31-foxhound/Sounds/gear.wav</path>
+		<mode>in-transit</mode>
+		<property>gear/gear[0]/position-norm</property>
+		<volume>
+		  <factor>0.8</factor>
+		</volume>
+	</gear>
+  
+	<gear-lock>
+		<name>gear-lock</name>
+		<path>Aircraft/mig31-foxhound/Sounds/gear-lck.wav</path>
+		<condition>
+			<equals>
+				<property>/gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</gear-lock>
+
+	<gear-wind>
+		<name>gear-wind</name>
+		<mode>looped</mode>
+		<path>Sounds/rumble.wav</path>
+		<condition>
+			<greater-than>
+			<property>/gear/gear[1]/position-norm[0]</property>
+			<value>0.01</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>/velocities/airspeed-kt</property>
+			<factor>0.004</factor>
+			<max>1.0</max>
+		</volume>
+	</gear-wind>
+
+  
+
+
+</fx>
+
+</PropertyList>

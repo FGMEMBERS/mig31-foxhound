@@ -1,0 +1,1567 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>radar.ac</path>
+
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonLeft01</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonLeft02</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>2</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonLeft03</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>3</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonLeft04</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>4</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonLeft05</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>5</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonLeft06</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>6</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>RadarButtonRight01</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/radar/selected</property>
+				<value>22</value>
+			</binding>
+		</action>
+	</animation>
+
+
+	<!-- +++ MFD DISPLAY ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+	<!-- Selected mode 1: home page on display -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplay00</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Selected mode 2: airplane loads -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplay01</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Selected mode 3: Air Air 200 NM mode -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplay03</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>3</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Selected mode 4: Air Air 100 NM mode -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplay04</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>4</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Selected mode 5: Air Air 40 NM mode -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplay05</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>5</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Selected mode 6: Air Air 10 NM mode -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplay06</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>6</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Selected mode : test mode -->
+	<animation>
+		<type>select</type>
+		<object-name>RadarDisplayTest</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/selected</property>
+				<value>22</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	
+	
+	
+	<!-- +++ RETICULE DISPLAY +++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	
+	
+	<!-- Reticle n°1 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle1</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[0]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle1</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle1</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[0]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle1</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[0]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+
+	<!-- Reticle n°2 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle2</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[1]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle2</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle2</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[1]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle2</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[1]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+	
+	<!-- Reticle n°3 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle3</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[2]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle3</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle3</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[2]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle3</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[2]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°4 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle4</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[3]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle4</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle4</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[3]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle4</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[3]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°5 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle5</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[4]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle5</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle5</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[4]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle5</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[4]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°6 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle6</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[5]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle6</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle6</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[5]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle6</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[5]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°7 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle7</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[6]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle7</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle7</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[6]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle7</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[6]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°8 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle8</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[7]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle8</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle8</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[7]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle7</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[7]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°9 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle9</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[8]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle9</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle9</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[8]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle9</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[8]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°10 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle10</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[9]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle10</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle10</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[9]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle10</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[9]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°11 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle11</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[10]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle11</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle11</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[10]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle11</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[10]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°12 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle12</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[11]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle12</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle12</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[11]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle12</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[11]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°12 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle12</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[11]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle12</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle12</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[11]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle12</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[11]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°13 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle13</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[12]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle13</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle13</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[12]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle13</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[12]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°14 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle14</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[13]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle14</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle14</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[13]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle14</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[13]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Reticle n°15 -->
+	<animation>
+		<type>select</type>
+		<object-name>reticle15</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/ai/models/multiplayer[14]/radar/in-sight</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>reticle15</object-name>
+	    <property>orientation/roll-deg</property>
+    	<factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle15</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[14]/radar/x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>reticle15</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[14]/radar/y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+
+
+
+
+
+
+
+	<!-- +++ BORESIGHTS +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+	<!-- Affichage des plots radar (boresight) sur l'écran multi-fonctions. -->
+
+	<!-- Plot n°0 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot0</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[0]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot0</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[0]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot0</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[0]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°1 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot1</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[1]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot1</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[1]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot1</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[1]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°2 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot2</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[2]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot2</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[2]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot2</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[2]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°3 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot3</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[3]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot3</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[3]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot3</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[3]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°4 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot4</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[4]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot4</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[4]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot4</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[4]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°5 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot5</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[5]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot5</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[5]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot5</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[5]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°6 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot6</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[6]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot6</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[6]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot6</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[6]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°7 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot7</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[7]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot7</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[7]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot7</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[7]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°8 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot8</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[8]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot8</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[8]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot8</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[8]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°9 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot9</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[9]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot9</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[9]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot9</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[9]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°10 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot10</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[10]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot10</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[10]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot10</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[10]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°11 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot11</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[11]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot11</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[11]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot11</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[11]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°12 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot12</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[12]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot12</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[12]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot12</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[12]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°13 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot13</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[13]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot13</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[13]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot13</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[13]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°14 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot14</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[14]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot14</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[14]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot14</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[14]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+	<!-- Plot n°15 -->
+	<animation>
+		<type>select</type>
+		<object-name>plot15</object-name>
+		<condition>
+			<equals>
+							<property>instrumentation/radar/ai/models/multiplayer[15]/radar/in-range</property>
+							<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot15</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[15]/radar/x-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> -1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>plot15</object-name>
+		<property>instrumentation/radar/ai/models/multiplayer[15]/radar/y-shift</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+
+
+
+	<!-- +++ TARGET TRACKING ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+	<!-- 
+	Réticule de la cible trackée. 
+	L'utilisation de ce réticule se base sur les propriétés suivantes:
+	* instrumentation/radar/tracked          : indique si la fonction est active
+	* instrumentation/radar/tracked-x-offset : décalage horizontal du réticule
+	* instrumentation/radar/tracked-y-offset : décalage vertical du réticule
+	* instrumentation/radar/tracked-callsign : nom de la cible à suivre
+
+	La procédure à suivre pour utiliser cette fonction est la suivante:
+	* indiquer le nom de la cible à suivre
+	* changer l'état de la propriété tracked
+	-->
+	<animation>
+		<type>select</type> 
+		<object-name>TrackedReticle</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/radar/tracked</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+	    <type>rotate</type>
+	    <object-name>TrackedReticle</object-name>
+	    <property>orientation/roll-deg</property>
+    	    <factor>-1</factor>
+	    <center>
+	      <x-m>-0.098963</x-m>
+	      <y-m>0.007649</y-m>
+	      <z-m>0.488767</z-m>
+	    </center>
+	    <axis>
+	      <x>1</x>
+	      <y>0</y>
+	      <z>0</z>
+	    </axis>
+ 	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>TrackedReticle</object-name>
+		<property>instrumentation/radar/tracked-x-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 1 </y>
+			<z> 0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>TrackedReticle</object-name>
+		<property>instrumentation/radar/tracked-y-offset</property>
+		<axis>
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 1 </z>
+		</axis>
+	</animation>
+
+</PropertyList>
+
+<!-- End of file -->
+

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+				<path>strobolight1.ac</path>
+				<animation>
+					<type>noshadow</type>
+					<object-name>StroboLight1</object-name>
+				</animation>
+				<animation>
+					<type>select</type>
+					<object-name>StroboLight1</object-name>
+					<condition>
+									<property>/sim/model/lights/strobe1/state</property>
+					</condition>
+				</animation>
+				<animation>
+					<type>billboard</type>
+					<object-name>StroboLight1</object-name>
+					<spherical type="bool">true</spherical>
+				</animation>
+</PropertyList>
+
+

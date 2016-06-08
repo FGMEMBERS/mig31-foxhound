@@ -1,0 +1,1028 @@
+<?xml version="1.0"?>
+<!-- 
+	A wrapper file for the MIG31 Foxhound 3D model
+	Charles INGELS, <charles@maisonblv.net>, 2009
+	Released under GPL 
+	See http://charles.ingels.free.fr/flightgear for more informations.
+-->
+
+<PropertyList>
+	<path>mig31-foxhound.ac</path>
+
+	<!-- On positionne l'avion en lui affectant un offset. -->
+	<offsets>
+		<z-m>0.0</z-m>
+		<x-m>0.0</x-m>
+		<y-m>0.0</y-m>
+		<heading-deg>180.0</heading-deg>
+	</offsets>
+ 
+	<!-- Panneau et instruments de bord. -->
+	<model>
+		<path>Aircraft/mig31-foxhound/Panel/InstrumentPanel.xml</path>
+	</model>
+
+	<!-- Animation des élevons (gouvernes de profondeur). -->
+	<animation>
+		<type>rotate</type>
+		<object-name>Elevator</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<!-- <property>fcs/elevator-pos-normw/property> -->
+		<factor>15</factor>
+		<offset-deg>0</offset-deg>
+		<min>-90</min>
+		<max>0</max>
+		<center>
+			<x-m>-9.93229</x-m>
+			<y-m>-0.016319</y-m>
+			<z-m>1.154678</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-2.111486</y>
+			<z>-0.007508</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de l'aileron gauche. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftAileron</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>   
+		<center>
+			<x-m>-7.840971</x-m>
+			<y-m>4.270883</y-m>
+			<z-m>1.592722</z-m>
+		</center>
+		<axis>
+			<x>-0.240385</x>
+			<y>1.334837</y>
+			<z>-0.026277</z>
+		</axis>
+	</animation>
+ 
+	<!-- Animation de l'aileron droit. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>RightAileron</object-name>
+		<property>surface-positions/right-aileron-pos-norm</property>
+		<factor>40</factor>
+		<offset-deg>0</offset-deg>   
+		<center>
+			<x-m>-7.840972</x-m>
+			<y-m>-4.281771</y-m>
+			<z-m>1.666981</z-m>
+		</center>
+		<axis>
+			<x>0.240386</x>
+			<y>1.315699</y>
+			<z>0.174795</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de la gouverne verticale gauche. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftRudder</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-35</factor>
+		<offset-deg>0</offset-deg>   
+		<center>
+			<x-m>-10.880176</x-m>
+			<y-m>1.379275</y-m>
+			<z-m>3.682825</z-m>
+		</center>
+		<axis>
+			<x>0.643139</x>
+			<y>-0.188869</y>
+			<z>-1.546189</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de la gouverne verticale droite. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>RightRudder</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-35</factor>
+		<offset-deg>0</offset-deg>   
+		<center>
+			<x-m>-10.880176</x-m>
+			<y-m>-1.379713</y-m>
+			<z-m>3.682825</z-m>
+		</center>
+		<axis>
+			<x>0.643137</x>
+			<y>0.207663</y>
+			<z>-1.543312</z>
+		</axis>
+	</animation>
+
+	<!-- 
+	Animation de l'aérofreins droit. L'aérofrein n'est activé que si le train
+	d'atterrissage n'est pas sorti, puisque un panneau de trappe de train sert justement
+	d'aérofrein.
+	-->
+	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</equals>
+		</condition>
+		<type>rotate</type>
+		<object-name>RightAirbrake</object-name>
+		<property>surface-positions/speedbrake-pos-norm</property>
+		<min-deg>0</min-deg>
+		<max-deg>60</max-deg>
+		<factor>60</factor>
+    <center>
+      <x-m>-1.828306</x-m>
+      <y-m>-0.836157</y-m>
+      <z-m>0.446526</z-m>
+    </center>
+    <axis>
+      <x>0.001541</x>
+      <y>-0.372421</y>
+      <z>0.072605</z>
+    </axis>
+	</animation>
+
+	<!-- Animation de l'aérofreins gauche. -->
+	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>0</value>
+			</equals>
+		</condition>
+		<type>rotate</type>
+		<object-name>LeftAirbrake</object-name>
+		<property>surface-positions/speedbrake-pos-norm</property>
+		<min-deg>0</min-deg>
+		<max-deg>60</max-deg>
+		<factor>60</factor>
+    <center>
+      <x-m>-1.828444</x-m>
+      <y-m>0.794732</y-m>
+      <z-m>0.449276</z-m>
+    </center>
+    <axis>
+      <x>-0.003833</x>
+      <y>-0.356645</y>
+      <z>-0.088018</z>
+    </axis>
+	</animation>
+
+<!-- Animation du volet gauche -->
+  <animation>
+    <type>rotate</type>
+    <object-name>LeftFlap</object-name>
+	<property>surface-positions/flap-pos-norm</property>
+	<factor>50</factor>
+    <center>
+      <x-m>-7.544401</x-m>
+      <y-m>2.816574</y-m>
+      <z-m>1.769165</z-m>
+    </center>
+    <axis>
+      <x>0.441124</x>
+      <y>-2.102776</y>
+      <z>0.243646</z>
+    </axis>
+  </animation>
+
+	<!-- Animation du volet droit -->
+  <animation>
+    <type>rotate</type>
+    <object-name>RightFlap</object-name>
+	<property>surface-positions/flap-pos-norm</property>
+	<factor>50</factor>
+    <center>
+      <x-m>-7.544402</x-m>
+      <y-m>-2.819764</y-m>
+      <z-m>1.769165</z-m>
+    </center>
+    <axis>
+      <x>-0.441124</x>
+      <y>-2.102776</y>
+      <z>-0.243646</z>
+    </axis>
+  </animation>
+
+
+<!-- TRAIN D'ATTERRISSAGE AVANT -->
+
+	<!-- Animation de la roue avant (tourne à gauche, tourne à droite). -->
+	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<type>rotate</type>
+		<object-name>NoseGear</object-name>
+		<object-name>NoseWheelArm</object-name>
+		<object-name>NoseWheel</object-name>
+		<object-name>WheelCover</object-name>
+		<object-name>NoseWheelHook</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-55</factor>
+		<center>
+			<x-m>2.416652</x-m>
+			<y-m>-0.022133</y-m>
+			<z-m>-0.08309</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>0.682183</z>
+		</axis>
+	</animation>
+
+	<!-- Animation du mouvement de sortie/entrée du train d'atterrissage avant. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>NoseWheelArm</object-name>
+		<object-name>NoseGear</object-name>
+		<object-name>WheelCover</object-name>
+		<object-name>NoseWheel</object-name>
+		<object-name>NoseWheelHook</object-name>
+		<object-name>NoseGearDoorFront</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind> 0.0  </ind><dep>   0 </dep></entry>
+			<entry><ind> 0.35 </ind><dep>   0 </dep></entry>
+			<entry><ind> 0.75 </ind><dep> -90 </dep></entry>
+			<entry><ind> 1.0  </ind><dep> -90 </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>2.423586</x-m>
+			<y-m>-0.022458</y-m>
+			<z-m>0.825828</z-m>
+		</center>
+		<axis>
+			<x>1e-06</x>
+			<y>1.140606</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Animation des deux petites trappes du train avant (trappes droite et gauche). -->
+	<!-- Trappe droite -->
+	<animation>
+		<type>rotate</type>
+		<object-name>NoseGearDoorFrontRigh</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind> 0.0  </ind><dep>   0 </dep></entry>
+			<entry><ind> 0.35 </ind><dep>  90 </dep></entry>
+			<entry><ind> 1.0  </ind><dep>  90 </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>1.268521</x-m>
+			<y-m>-0.335293</y-m>
+			<z-m>0.58373</z-m>
+		</center>
+		<axis>
+			<x>-0.993834</x>
+			<y>0</y>
+			<z>-0.03817</z>
+		</axis>
+	</animation>
+	<!-- Trappe gauche -->
+	<animation>
+		<type>rotate</type>
+		<object-name>NoseGearDoorFrontLeft</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry><ind> 0.0  </ind><dep>   0 </dep></entry>
+			<entry><ind> 0.5 </ind><dep>  90 </dep></entry>
+			<entry><ind> 1.0  </ind><dep>  90 </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>1.268521</x-m>
+			<y-m>0.299076</y-m>
+			<z-m>0.568822</z-m>
+		</center>
+		<axis>
+			<x>0.993834</x>
+			<y>0</y>
+			<z>0.043954</z>
+		</axis>
+	</animation>
+	
+	<!-- Rotation du bras de maintien du train avant, en fonction de la compression du train. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>NoseWheelHook</object-name>
+		<property>/gear/gear/compression-norm</property>
+		<factor type="double">20.0</factor>
+		<center>
+			<x-m>1.545098</x-m>
+			<y-m>-0.017133</y-m>
+			<z-m>0.635866</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0.096989</y>
+			<z>0</z>
+		</axis>
+	</animation>
+  
+	<!-- Animation de la compression du train avant (translation verticale). -->
+	<animation>
+		<type>translate</type>
+		<object-name>NoseGear</object-name>
+		<object-name>NoseWheel</object-name>
+		<object-name>WheelCover</object-name>
+		<property>/gear/gear/compression-norm</property>
+		<factor>0.1</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>-0.15</z>
+		</axis>
+	</animation>
+
+	<!-- Rotation des roues avant lorsque l'avion est au sol et roule. -->
+	<animation>
+		<type>spin</type>
+		<object-name>NoseWheel</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/wow</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<property>/gear/gear[0]/rollspeed-ms</property>
+		<factor>15.0</factor>
+		<center>
+			<x-m>1.206129</x-m>
+			<y-m>-0.020979</y-m>
+			<z-m>1.250674</z-m>
+			</center>
+		<axis>
+			<x>0.000368</x>
+			<y>0.402117</y>
+			<z>-3.6e-05</z>
+		</axis>
+	</animation>
+<!-- FIN DE TRAIN D'ATTERRISSAGE AVANT. -->
+
+
+
+<!-- TRAIN D'ATTERRISSAGE ARRIERE DROIT. -->
+
+	<!-- Sortie de la jambe de train du fuselage. -->
+	<animation>
+    <type>rotate</type>
+    <object-name>RightRearWheelAxe.001</object-name>
+    <object-name>RightRearWheelAxe.002</object-name>
+    <object-name>RightRearWheelAxe</object-name>
+	<object-name>RightRearWheel1</object-name>
+	<object-name>RightRearWheel2</object-name>
+    <property>gear/gear[2]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.0 </ind><dep>  3</dep></entry>
+		<entry><ind>  0.8 </ind><dep> -90</dep></entry>
+		<entry><ind>  1.0 </ind><dep> -90</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-4.751889</x-m>
+      <y-m>-0.938354</y-m>
+      <z-m>0.720502</z-m>
+    </center>
+    <axis>
+      <x>0.035981</x>
+      <y>-0.180767</y>
+      <z>0.056671</z>
+    </axis>
+  </animation>
+
+	<!-- Rotation de l'axe maintenant les deux roues pour le mettre à l'horizontal. -->
+  <animation>
+    <type>rotate</type>
+    <object-name>RightRearWheelAxe</object-name>
+	<object-name>RightRearWheel1</object-name>
+	<object-name>RightRearWheel2</object-name>
+    <property>gear/gear[2]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.5 </ind><dep>  0</dep></entry>
+		<entry><ind>  0.9 </ind><dep> 75</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.600089</x-m>
+      <y-m>-0.828927</y-m>
+      <z-m>0.755257</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+	<!-- 
+	Rotation de l'axe horizontal sur lequel sont accrochées les deux
+	roues pour l'aligner avec l'axe de l'avion. 
+	-->
+  <animation>
+    <type>rotate</type>
+    <object-name>RightRearWheelAxe</object-name>
+	<object-name>RightRearWheel1</object-name>
+	<object-name>RightRearWheel2</object-name>
+    <property>gear/gear[2]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.7 </ind><dep>   0</dep></entry>
+		<entry><ind>  1.0 </ind><dep> 30</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.600089</x-m>
+      <y-m>-0.828927</y-m>
+      <z-m>0.755257</z-m>
+    </center>
+    <axis>
+      <x>-0.02835</x>
+      <y>-0.029276</y>
+      <z>-0.197305</z>
+    </axis>
+  </animation>
+
+	<!-- 
+	On finit par une petite rotation afin de bien faire rentrer le train 
+	dans le fuselage, sinon, on voit un bout de roue qui sort un peu. 
+	Et oui, on ajuste un tantinnet.
+	-->
+  <animation>
+    <type>rotate</type>
+    <object-name>RightRearWheelAxe</object-name>
+	<object-name>RightRearWheel1</object-name>
+	<object-name>RightRearWheel2</object-name>
+    <property>gear/gear[2]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.8 </ind><dep>  0</dep></entry>
+		<entry><ind>  1.0 </ind><dep> 10</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.595925</x-m>
+      <y-m>-0.847165</y-m>
+      <z-m>0.812606</z-m>
+    </center>
+    <axis>
+      <x>-0.941796</x>
+      <y>-0.455315</y>
+      <z>0.483137</z>
+    </axis>
+  </animation>
+
+	<!-- 
+	Alors là, je ne me souviens plus à quoi sert cette animation,
+	mais elle est appliquée sur l'axe et sur les deux roues.
+	-->
+	<animation>
+		<type>rotate</type>
+		<object-name>RightRearWheelAxe</object-name>
+		<object-name>RightRearWheel1</object-name>
+		<object-name>RightRearWheel2</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry><ind>  0.8 </ind><dep>  0</dep></entry>
+			<entry><ind>  1.0 </ind><dep> 10</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-3.646538</x-m>
+			<y-m>-0.836783</y-m>
+			<z-m>0.889198</z-m>
+		</center>
+		<axis>
+			<x>-1.005738</x>
+			<y>-0.490743</y>
+			<z>0.538594</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de la compression du train (translation verticale). -->
+	<animation>
+		<type>translate</type>
+		<object-name>RightRearWheelAxe.001</object-name>
+		<object-name>RightRearWheelAxe</object-name>
+		<object-name>RightRearWheel1</object-name>
+		<object-name>RightRearWheel2</object-name>
+		<property>/gear/gear[2]/compression-norm</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>-0.15</z>
+		</axis>
+	</animation>
+
+	<!-- 
+	Petite rotations du bras supportant les deux roues en fonction de
+	la valeur de compression de la suspension avant ! En effet, lorsque le
+	bras de suspension avant se comprime, l'avion bascule sur un axe perpendiculaire
+	situé approximativement au niveau de son atterrisseur arrière. Comme les roues 
+	arrières restent en contact avec le sol, il faut donc appliquer cette petite rotation.
+	-->
+	<!--
+	<animation>
+		<type>rotate</type>
+		<object-name>RightRearWheelAxe</object-name>
+		<object-name>RightRearWheel1</object-name>
+		<object-name>RightRearWheel2</object-name>
+		<property>/gear/gear/compression-norm</property>
+		<factor type="double">-2.5</factor>
+		<center>
+			<x-m>-3.665095</x-m>
+			<y-m>-0.873945</y-m>
+			<z-m>0.91613</z-m>
+		</center>
+		<axis>
+			<x>-0.029502</x>
+			<y>0.056289</y>
+			<z>-0.004113</z>
+		</axis>
+	</animation>
+	-->
+
+	<!-- Rotation de la roue 1 en fonction de la vitesse de l'avion au sol. -->
+	<animation>
+		<type>spin</type>
+		<object-name>RightRearWheel1</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[1]/wow</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<property>/gear/gear[1]/rollspeed-ms</property>
+		<factor>15.0</factor>
+		<center>
+			<x-m>-4.068783</x-m>
+			<y-m>-0.891363</y-m>
+			<z-m>1.13772</z-m>
+		</center>
+		<axis>
+			<x>-0.07073</x>
+			<y>0.134168</y>
+			<z>-0.010588</z>
+		</axis>
+	</animation>
+  
+	<!-- Rotation de la roue 2 en fonction de la vitesse de l'avion au sol. -->
+	<animation>
+		<type>spin</type>
+		<object-name>RightRearWheel2</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[1]/wow</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<property>/gear/gear[1]/rollspeed-ms</property>
+		<factor>15.0</factor>
+		<center>
+			<x-m>-3.120174</x-m>
+			<y-m>-0.771528</y-m>
+			<z-m>0.768386</z-m>
+		</center>
+		<axis>
+			<x>-0.07073</x>
+			<y>0.134168</y>
+			<z>-0.010588</z>
+		</axis>
+	</animation>
+
+<!-- Animation des trappes du train. -->
+  <animation>
+    <type>rotate</type>
+    <object-name>RightRearGearDoor1</object-name>
+    <property>gear/gear[2]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.0 </ind><dep>  0</dep></entry>
+		<entry><ind>  0.25 </ind><dep> 60</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.70586</x-m>
+      <y-m>-1.356957</y-m>
+      <z-m>1.184799</z-m>
+    </center>
+    <axis>
+      <x>-1.251923</x>
+      <y>0.015739</y>
+      <z>0.002886</z>
+    </axis>
+  </animation>
+  
+	<!-- Animation de la trappe de train/aérofrein. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>RightAirbrake</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry><ind>  0.0 </ind><dep>  0</dep></entry>
+			<entry><ind>  0.25 </ind><dep> 60</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-1.828306</x-m>
+			<y-m>-0.836157</y-m>
+			<z-m>0.446526</z-m>
+		</center>
+		<axis>
+			<x>0.001541</x>
+			<y>-0.372421</y>
+			<z>0.072605</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de la petite trappe arrière droite (jambe de train). -->
+	<animation>
+		<type>rotate</type>
+		<object-name>RightRearGearDoor2</object-name>
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry><ind>  0.0  </ind><dep>  0  </dep></entry>
+			<entry><ind>  0.25 </ind><dep> -100 </dep></entry>
+			<entry><ind>  1.0  </ind><dep> -100 </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-4.757672</x-m>
+			<y-m>-1.094866</y-m>
+			<z-m>0.459574</z-m>
+		</center>
+		<axis>
+			<x>0.851645</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+  </animation>
+
+	<!-- FIN TRAIN ATTERRISSAGE ARRIERE DROIT -->
+
+
+	<!-- TRAIN D'ATTERRISSAGE ARRIERE GAUCHE. -->
+	
+	<!-- Sortie de la jambe de train du fuselage. -->
+	<animation>
+    <type>rotate</type>
+    <object-name>LeftRearWheelAxe.001</object-name>
+    <object-name>LeftRearWheelAxe.002</object-name>
+    <object-name>LeftRearWheelAxe</object-name>
+	<object-name>LeftRearWheel1</object-name>
+	<object-name>LeftRearWheel2</object-name>
+    <property>gear/gear[1]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.0 </ind><dep>  3</dep></entry>
+		<entry><ind>  0.8 </ind><dep> -90</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-4.751889</x-m>
+      <y-m>0.938394</y-m>
+      <z-m>0.720502</z-m>
+    </center>
+    <axis>
+      <x>-0.035981</x>
+      <y>-0.180767</y>
+      <z>-0.056671</z>
+    </axis>
+  </animation>
+
+	<!-- Rotation de l'axe maintenant les deux roues pour le mettre à l'horizontal. -->
+  <animation>
+    <type>rotate</type>
+    <object-name>LeftRearWheelAxe</object-name>
+	<object-name>LeftRearWheel1</object-name>
+	<object-name>LeftRearWheel2</object-name>
+    <property>gear/gear[1]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.5 </ind><dep>  0</dep></entry>
+		<entry><ind>  0.9 </ind><dep> 75</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.600089</x-m>
+      <y-m>-0.828927</y-m>
+      <z-m>0.755257</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+	<!-- Rotation de l'axe horizontal pour l'aligner avec l'axe de l'avion. -->
+  <animation>
+    <type>rotate</type>
+    <object-name>LeftRearWheelAxe</object-name>
+	<object-name>LeftRearWheel1</object-name>
+	<object-name>LeftRearWheel2</object-name>
+    <property>gear/gear[1]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.7 </ind><dep>   0</dep></entry>
+		<entry><ind>  1.0 </ind><dep> -30</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.617133</x-m>
+      <y-m>0.76423</y-m>
+      <z-m>0.815118</z-m>
+    </center>
+    <axis>
+      <x>-0.051614</x>
+      <y>0.040963</y>
+      <z>-0.190389</z>
+    </axis>
+  </animation>
+
+	<!-- Je ne me souviens plus à quoi sert cette animation ! -->
+  <animation>
+    <type>rotate</type>
+    <object-name>LeftRearWheelAxe</object-name>
+	<object-name>LeftRearWheel1</object-name>
+	<object-name>LeftRearWheel2</object-name>
+    <property>gear/gear[1]/position-norm</property>
+	<interpolation>
+		<entry><ind>  0.7 </ind><dep>   0</dep></entry>
+		<entry><ind>  1.0 </ind><dep>  15</dep></entry>
+	</interpolation>
+    <center>
+      <x-m>-3.646538</x-m>
+      <y-m>0.78833</y-m>
+      <z-m>0.889198</z-m>
+    </center>
+    <axis>
+      <x>1.005738</x>
+      <y>-0.490743</y>
+      <z>-0.538595</z>
+    </axis>
+  </animation>
+	
+	<!-- Animation de la compression du train (translation verticale). -->
+	<animation>
+		<type>translate</type>
+		<object-name>LeftRearWheelAxe.001</object-name>
+		<object-name>LeftRearWheelAxe</object-name>
+		<object-name>LeftRearWheel1</object-name>
+		<object-name>LeftRearWheel2</object-name>
+		<property>/gear/gear[1]/compression-norm</property>
+		<factor>-0.25</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>-0.15</z>
+		</axis>
+	</animation>
+
+	<!-- 
+	Petite rotations du bras supportant les deux roues en fonction de
+	la valeur de compression de la suspension avant ! En effet, lorsque le
+	bras de suspension avant se comprime, l'avion bascule sur un axe perpendiculaire
+	situé approximativement au niveau de son atterrisseur arrière. Comme les roues 
+	arrières restent en contact avec le sol, il faut donc appliquer cette petite rotation.
+	-->
+	<!--
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftRearWheelAxe</object-name>
+		<object-name>LeftRearWheel1</object-name>
+		<object-name>LeftRearWheel2</object-name>
+		<property>/gear/gear/compression-norm</property>
+		<factor type="double">-2.5</factor>
+		<center>
+			<x-m>-3.658537</x-m>
+			<y-m>0.822134</y-m>
+			<z-m>0.915053</z-m>
+		</center>
+		<axis>
+			<x>-0.029502</x>
+			<y>-0.056289</y>
+			<z>-0.004113</z>
+		</axis>
+	</animation>
+	-->
+	
+	<!-- Rotation de la roue 2 en fonction de la vitesse de l'avion au sol (spin). -->
+	<animation>
+		<type>spin</type>
+		<object-name>LeftRearWheel2</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[2]/wow</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<property>/gear/gear[2]/rollspeed-ms</property>
+		<factor>15.0</factor>
+		<center>
+			<x-m>-3.120174</x-m>
+			<y-m>0.723075</y-m>
+			<z-m>0.768386</z-m>
+		</center>
+		<axis>
+			<x>0.07073</x>
+			<y>0.134168</y>
+			<z>0.010588</z>
+		</axis>
+	</animation>
+	
+	<!-- Rotation de la roue 1 en fonction de la vitesse de l'avion au sol (spin). -->
+	<animation>
+		<type>spin</type>
+		<object-name>LeftRearWheel1</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[2]/wow</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<property>/gear/gear[2]/rollspeed-ms</property>
+		<factor>15.0</factor>
+		<center>
+			<x-m>-4.068783</x-m>
+			<y-m>0.84291</y-m>
+			<z-m>1.13772</z-m>
+		</center>
+		<axis>
+			<x>0.070731</x>
+			<y>0.134168</y>
+			<z>0.010588</z>
+		</axis>
+	</animation>
+
+  <!-- Animation des trappes du train. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftRearGearDoor1</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry><ind>  0.0 </ind><dep>  0</dep></entry>
+			<entry><ind>  0.25 </ind><dep> 60</dep></entry>
+		</interpolation>
+		<center>
+		<x-m>-3.695213</x-m>
+		<y-m>1.335776</y-m>
+		<z-m>1.217654</z-m>
+		</center>
+		<axis>
+			<x>1.251923</x>
+			<y>0.015218</y>
+			<z>-0.00279</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de la trappe/aérofrein gauche. -->
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftAirbrake</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry><ind>  0.0 </ind><dep>  0</dep></entry>
+			<entry><ind>  0.25 </ind><dep> 60</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-1.828444</x-m>
+			<y-m>0.794732</y-m>
+			<z-m>0.449276</z-m>
+		</center>
+		<axis>
+			<x>-0.003833</x>
+			<y>-0.356645</y>
+			<z>-0.088018</z>
+		</axis>
+	</animation>
+
+	<!-- Animation de la petite trappe arrière droite (jambe de train). -->
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftRearGearDoor2</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry><ind>  0.0  </ind><dep>  0  </dep></entry>
+			<entry><ind>  0.25 </ind><dep> -100 </dep></entry>
+			<entry><ind>  1.0  </ind><dep> -100 </dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-4.757672</x-m>
+			<y-m>1.052075</y-m>
+			<z-m>0.502912</z-m>
+		</center>
+		<axis>
+			<x>-0.851645</x>
+			<y>-1e-06</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- FIN TRAIN ATTERRISSAGE ARRIERE GAUCHE. -->
+
+	<!-- Affichage des pilotes seulement si la vue est externe. -->
+	<animation>
+		<type>select</type>
+		<object-name>L-helmet</object-name>
+		<object-name>L-oxy-tube</object-name>
+		<object-name>L-chest</object-name>
+		<object-name>L-visor</object-name>
+		<object-name>L-face-mask</object-name>
+		<object-name>LL-arm</object-name>
+		<object-name>LR-armA</object-name>
+		<object-name>LR-armB</object-name>
+		<object-name>L-harness</object-name>
+		<object-name>LL-leg</object-name>
+		<object-name>LR-leg</object-name>
+		<object-name>LL-glove</object-name>
+		<object-name>LR-glove</object-name>
+		<object-name>L-head</object-name>
+		<object-name>disk</object-name>
+		<object-name>disk.001</object-name>
+		<object-name>cylinder</object-name>
+		<object-name>cylinder.001</object-name>
+		<object-name>L-collar</object-name>
+		<object-name>patche</object-name>
+		<object-name>L-mask-tube</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/internal</property>
+					<value>true</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+
+
+	<!-- Flammes de la post-combustion en sortie des moteurs. -->
+	<animation>
+		<type>select</type>
+		<object-name>AfterburnerLeft</object-name>
+		<condition>
+			<equals>
+				<property>engines/engine[0]/augmentation</property>
+				<value>true</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>AfterburnerRight</object-name>
+		<condition>
+			<equals>
+				<property>engines/engine[1]/augmentation</property>
+				<value>true</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+	<!-- Animation du manche à balai. -->
+  <animation>
+    <type>rotate</type>
+    <object-name>stick-handle</object-name>
+		<property>/controls/flight/aileron</property>
+    <factor>11</factor>
+    <center>
+      <x-m>-0.06134</x-m>
+      <y-m>-0.002458</y-m>
+      <z-m>-0.219875</z-m>
+    </center>
+    <axis>
+      <x>0.052368</x>
+      <y>0</y>
+      <z>0.022081</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>stick-handle</object-name>
+		<property>/controls/flight/elevator</property>
+    <factor>-11</factor>
+    <center>
+      <x-m>-0.06134</x-m>
+      <y-m>-0.002458</y-m>
+      <z-m>-0.219875</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-0.056273</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+	<!-- Animation des lumières stroboscopiques -->
+	<model>
+					<path>Aircraft/mig31-foxhound/Models/strobolight1.xml</path>
+					<offsets>
+									<x-m> -5.508 </x-m>
+									<y-m>  0.110 </y-m>
+									<z-m>  2.452 </z-m>
+					</offsets>
+	</model>
+
+
+</PropertyList>
+ 
+ 

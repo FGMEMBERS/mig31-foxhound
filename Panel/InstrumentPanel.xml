@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>InstrumentPanel.ac</path>
+	<offsets>
+		<x-m>1.852</x-m>
+		<y-m>-0.006</y-m>
+		<z-m>2.049</z-m>
+	</offsets>
+	
+	<!-- Add instruments here ! -->
+	<model>
+		<path>Aircraft/mig31-foxhound/Panel/hud.xml</path>
+	</model>
+	
+	<model>
+		<path>Aircraft/mig31-foxhound/Panel/radar.xml</path>
+	</model>
+	
+	<!-- ADI (Artificial Direction Indicator -->
+	<model>
+					<path>Aircraft/mig31-foxhound/Panel/Instruments/adi/adi.xml</path>
+					<offsets>
+									<x-m>0.051</x-m>
+									<y-m>0.163</y-m>
+									<z-m>0.207</z-m>
+									<heading-deg>0</heading-deg>
+					</offsets>
+	</model>
+</PropertyList>
