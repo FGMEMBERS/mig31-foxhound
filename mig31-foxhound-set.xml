@@ -22,7 +22,7 @@ http://charles.ingels.free.fr/flightgear/mig31.html
 		<aero>mig31-jsbsim</aero>
 		
 		<startup>
-			<splash-texture>Aircraft/mig31-foxhound/mig31-foxhound-splash.rgb</splash-texture>
+			<splash-texture>Aircraft/mig31-foxhound/mig31-foxhound-splash.png</splash-texture>
 		</startup>
 		
 		<sound>
